@@ -24,9 +24,7 @@ end
 
 sum = 0
 for index in (0..arr.size-1)
-    l = arr[index].min
-    w = arr[index].max
-    h = arr[index].sort[2]
+    l, h, w = arr[index].sort
     sum += 2*w*l + 2*l*h + 2*h*w + l*h
 end
 

@@ -10,8 +10,6 @@
 #
 ## Решение:
 
-
-
 instruction = []
 instruction_num = 0
 sum = 0
