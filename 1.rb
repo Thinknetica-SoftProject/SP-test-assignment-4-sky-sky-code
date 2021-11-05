@@ -17,5 +17,21 @@
 ## Решение:
 
 
+f = File.open("data/1.txt", 'r')
+file_s = ''
+floor = 0
+f.each do |line|
+    file_s += line
+end
 
+for index in (0..file_s.size)
+    if file_s[index] == '('
+        floor += 1
+    elsif file_s[index] == ')'
+        floor -= 1
+    else
+        puts file_s[index]
+    end
+end
 
+puts floor

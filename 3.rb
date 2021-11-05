@@ -11,3 +11,15 @@
 ## Решение:
 
 
+
+instruction = []
+instruction_num = 0
+sum = 0
+f = File.open('data/3.txt', 'r')
+for line in f
+    instruction[instruction_num] = line.split("\t").map(&:to_i)
+    sum += instruction[instruction_num].max - instruction[instruction_num].min
+    instruction_num += 1
+end
+
+puts sum

@@ -16,3 +16,20 @@
 #
 ## Решение:
 
+require 'digest'
+md5 = Digest::MD5.new
+input_str = gets.chomp
+flag = true
+num = 0
+while flag do
+    md5 << input_str + num.to_s
+    md5_arr = md5.to_s.split('')
+    if ((md5_arr[0] == '0') && (md5_arr[1] == '0') && (md5_arr[2] == '0') &&
+        (md5_arr[3] == '0')  && (md5_arr[4] == '0'))
+        flag = false
+        puts num
+        break
+    end
+    num += 1
+    md5 = md5.reset
+end
